@@ -137,10 +137,10 @@ STORAGES = {
 }
 
 WHITENOISE_KEEP_ONLY_HASHED_FILES = True
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME = 'eu-west-2'
