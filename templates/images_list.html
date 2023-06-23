@@ -33,6 +33,14 @@
             margin-bottom: 30px;
         }
 
+        h5 {
+            text-align: center;
+            position: relative;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+
         form {
             width: 500px;
             height: auto; /* Updated height to auto to expand according to content */
@@ -54,6 +62,18 @@
             color: #fff;
             font-size: 16px;
         }
+
+        .box {
+            width: 50%;
+            height: 50%;
+            border: 5px dot-dash #f7a239;
+        }
+
+        img {
+            width: 100%; /* takes the 100 % width of its container (.box div)*/
+            height: 100%; /* takes the 100 % height of its container (.box div)*/
+        }
+
     </style>
 
 
@@ -67,15 +87,17 @@
                 <h5>{{ i.title }}</h5>
                 <h6>{{ i.description }}</h6>
                 <h5>{{ i.price }}</h5>
-                <h6>{{ i.certificate.url }}</h6>
-
-                <img src="{{ i.certificate.url }}" alt="{{ i.title }}">
-{#                <img src="https://my-bucket-homework.s3.eu-north-1.amazonaws.com/certificates/760ef39f-c4a7-474a-98dd-1e477d9abe08/photo-1595433707802-6b2626ef1c91.jpeg" alt="{{ i.title }}">#}
+                <div class="box">
+                    <img src="{{ i.certificate.url }}" alt="{{ i.title }}" style="">
+                    {#                <img src="https://my-bucket-homework.s3.eu-north-1.amazonaws.com/certificates/760ef39f-c4a7-474a-98dd-1e477d9abe08/photo-1595433707802-6b2626ef1c91.jpeg" alt="{{ i.title }}">#}
+                </div>
             </li>
         {% endfor %}
     {% else %}
         <h3>No images</h3>
     {% endif %}
+
+    <br>
     <a href="/">New image upload</a>
 
 </form>
