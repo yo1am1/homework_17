@@ -67,14 +67,17 @@
                 <h5>{{ i.title }}</h5>
                 <h6>{{ i.description }}</h6>
                 <h5>{{ i.price }}</h5>
+                <h6>{{ i.certificate.url }}</h6>
 
                 <img src="{{ i.certificate.url }}" alt="{{ i.title }}">
+{#                <img src="https://my-bucket-homework.s3.eu-north-1.amazonaws.com/certificates/760ef39f-c4a7-474a-98dd-1e477d9abe08/photo-1595433707802-6b2626ef1c91.jpeg" alt="{{ i.title }}">#}
             </li>
         {% endfor %}
     {% else %}
         <h3>No images</h3>
     {% endif %}
     <a href="/">New image upload</a>
+
 </form>
 </body>
 </html>
