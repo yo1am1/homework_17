@@ -63,7 +63,7 @@
 
 <form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <h1>Image upload</h1>
+    <h1>Image upload:</h1>
     {{ form }}
     <input type="submit" value="Submit">
 </form>
