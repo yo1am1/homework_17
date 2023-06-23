@@ -45,6 +45,7 @@
             width: 500px;
             height: auto; /* Updated height to auto to expand according to content */
             padding: 20px;
+            margin: 10px auto;
             border: 1px solid #ccc;
             border-radius: 10px;
             background-color: RGBA(255, 255, 255, 0.5);
@@ -64,14 +65,16 @@
         }
 
         .box {
-            width: 50%;
-            height: 50%;
-            border: 5px dot-dash #f7a239;
+            width: 60%;
+            height: 60%;
+        {#border: 5px solid;#} border-radius: 20px;
+            position: relative;
         }
 
         img {
             width: 100%; /* takes the 100 % width of its container (.box div)*/
             height: 100%; /* takes the 100 % height of its container (.box div)*/
+            position: relative;
         }
 
     </style>
@@ -80,26 +83,31 @@
     <title>Homework</title>
 </head>
 <body>
+<h1> List of goods: </h1>
 <form>
-    {% if images %}
-        {% for i in images %}
-            <li>
-                <h5>{{ i.title }}</h5>
-                <h6>{{ i.description }}</h6>
-                <h5>{{ i.price }}</h5>
+{% if images %}
+    {% for i in images %}
+        <form>
+            <li class="list-unstyled">
+
+                <h3 class="font-weight-bold">Title: {{ i.title }}</h3>
                 <div class="box">
-                    <img src="{{ i.certificate.url }}" alt="{{ i.title }}" style="">
-                    {#                <img src="https://my-bucket-homework.s3.eu-north-1.amazonaws.com/certificates/760ef39f-c4a7-474a-98dd-1e477d9abe08/photo-1595433707802-6b2626ef1c91.jpeg" alt="{{ i.title }}">#}
+                    <img src="{{ i.certificate.url }}" alt="{{ i.title }}" class="rounded">
                 </div>
+                <br>
+                <h6 style="position: relative">Description: {{ i.description }}</h6>
+                <h5 style="">Price: {{ i.price }} $</h5>
+
             </li>
-        {% endfor %}
-    {% else %}
+        </form>
+
+    {% endfor %}
+{% else %}
+    <form>
         <h3>No images</h3>
-    {% endif %}
-
-    <br>
-    <a href="/">New image upload</a>
-
+    </form>
+{% endif %}
 </form>
+
 </body>
 </html>

@@ -34,7 +34,7 @@
         }
 
         form {
-            width: 500px;
+            width: 550px;
             height: auto; /* Updated height to auto to expand according to content */
             padding: 20px;
             border: 1px solid #ccc;
@@ -64,10 +64,15 @@
 <form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
-    <h1 class="display-4">Image upload:</h1>
-    {{ form }}
+    <h1 class="display-4">Post your product:</h1>
+    <h5>Name: {{ form.title }}</h5>
+    <br>
+    <h5>Description: {{ form.description }}</h5>
+    <br>
+    <h5>Price: {{ form.price }}$</h5>
 
-    <input type="submit" value="Submit">
+    <br>
+    <input type="submit" value="Submit" class="btn btn-success btn-lg btn-block">
 
 </form>
 
