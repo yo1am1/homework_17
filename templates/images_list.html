@@ -62,16 +62,16 @@
 <body>
 <form>
     {% for i in images %}
+        <li>
+            <h5>{{ i.title }}</h5>
+            <h6>{{ i.description }}</h6>
+            <h5>{{ i.price }}</h5>
 
-        <h5>{{ i.title }}</h5>
-        <h6>{{ i.description }}</h6>
-        <h5>{{ i.price }}</h5>
-
-        <img src="{{ i.sertificate.url }}" alt="{{ i.title }}">
-
+            <img src="{{ i.sertificate.url }}" alt="{{ i.title }}">
+        </li>
     {% endfor %}
 
-    <a href="{% url 'images' %}">New image upload:</a>
+    <a href="/">New image upload</a>
 </form>
 </body>
 </html>
