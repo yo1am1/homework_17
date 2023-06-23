@@ -7,12 +7,16 @@
 <body>
 
 {% for i in images %}
-    {{ i.name }}    {{ i.age }}
-    <img src="{{ i.sertificate.url }}" alt="">
+
+    <h5>{{ i.title }}</h5>
+    <h6>{{ i.description }}</h6>
+    <h5>{{ i.price }}</h5>
+
+    <img src="{{ i.sertificate.url }}" alt="{{ i.name }}">
+
 {% endfor %}
 
 <a href="{% url 'images' %}">New image upload:</a>
-
 
 </body>
 </html>
