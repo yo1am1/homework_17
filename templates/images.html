@@ -64,6 +64,13 @@
 <form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Add your product</li>
+            <li class="breadcrumb-item"><a href="/images">Shop</a></li>
+        </ol>
+    </nav>
+
     <h1 class="display-4">Post your product:</h1>
     <h5>Name: {{ form.title }}</h5>
     <br>
