@@ -33,10 +33,19 @@
             margin-bottom: 30px;
         }
 
+        h5 {
+            text-align: center;
+            position: relative;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+
         form {
-            width: 550px;
+            width: 500px;
             height: auto; /* Updated height to auto to expand according to content */
             padding: 20px;
+            margin: 10px auto;
             border: 1px solid #ccc;
             border-radius: 10px;
             background-color: RGBA(255, 255, 255, 0.5);
@@ -54,43 +63,36 @@
             color: #fff;
             font-size: 16px;
         }
-    </style>
 
+        .box {
+            width: 60%;
+            height: 60%;
+        {#border: 5px solid;#} border-radius: 20px;
+            position: relative;
+        }
+
+        img {
+            width: 100%; /* takes the 100 % width of its container (.box div)*/
+            height: 100%; /* takes the 100 % height of its container (.box div)*/
+            position: relative;
+        }
+
+    </style>
 
     <title>Homework</title>
 </head>
 <body>
 
-<form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
+{% block content %}
+    <h2>Sign up</h2>
+    <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        <h6>{{ form.as_div }}</h6>
+        <br>
+        <button type="submit">Sign up</button>
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Add your product</li>
-            <li class="breadcrumb-item"><a href="/home">Shop</a></li>
-        </ol>
-    </nav>
-    {% if user.is_authentificated %}
-        <h1 class="display-4">Post your product:</h1>
-        <h5>Name: {{ form.title }}</h5>
-        <br>
-        <h5>Description: {{ form.description }}</h5>
-        <br>
-        <h5>Price: {{ form.price }}$</h5>
-        <br>
-        <h5>Image: {{ form.certificate }}</h5>
-        <br>
-        <input type="submit" value="Submit" class="btn btn-success btn-lg btn-block">
-    {% else %}
-        <h1 class="display-4">You are not authentificated</h1>
-        <h1>Please, log in or register:</h1>
-        <br>
-        <br>
-        <a href="/">
-            <button type="button" class="btn btn-primary btn-lg btn-block">Click</button>
-        </a>
-    {% endif %}
-</form>
+    </form>
+{% endblock %}
 
 </body>
 </html>
