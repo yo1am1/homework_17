@@ -71,6 +71,7 @@
         </ol>
     </nav>
     {% if user.is_authentificated %}
+        Hello, {{ user.username }}!
         <h1 class="display-4">Post your product:</h1>
         <h5>Name: {{ form.title }}</h5>
         <br>

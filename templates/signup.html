@@ -42,7 +42,7 @@
 
 
         form {
-            width: 500px;
+            width: 600px;
             height: auto; /* Updated height to auto to expand according to content */
             padding: 20px;
             margin: 10px auto;
@@ -83,16 +83,16 @@
 </head>
 <body>
 
-{% block content %}
     <h2>Sign up</h2>
     <form method="post" action="{% url 'index' %}">
         {% csrf_token %}
         <h6>{{ form.as_div }}</h6>
         <br>
-        <button type="submit">Sign up</button>
+        <br>
+        <br>
+        <button type="submit" name="Submit" class="btn btn-primary btn-lg btn-block btn-outline-info">Sign up</button>
 
     </form>
-{% endblock %}
 
 </body>
 </html>
