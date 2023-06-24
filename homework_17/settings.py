@@ -148,10 +148,3 @@ AWS_S3_REGION_NAME = "eu-west-2"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_S3_FILE_OVERWRITE = False
 AWS_QUERYSTRING_AUTH = False
-
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
-EMAIL_HOST_PASSWORD = "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"
-# EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True

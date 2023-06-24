@@ -67,30 +67,21 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">Add your product</li>
-            <li class="breadcrumb-item"><a href="/home">Shop</a></li>
+            <li class="breadcrumb-item"><a href="/images">Shop</a></li>
         </ol>
     </nav>
-    {% if user.is_authentificated %}
-        Hello, {{ user.username }}!
-        <h1 class="display-4">Post your product:</h1>
-        <h5>Name: {{ form.title }}</h5>
-        <br>
-        <h5>Description: {{ form.description }}</h5>
-        <br>
-        <h5>Price: {{ form.price }}$</h5>
-        <br>
-        <h5>Image: {{ form.certificate }}</h5>
-        <br>
-        <input type="submit" value="Submit" class="btn btn-success btn-lg btn-block">
-    {% else %}
-        <h1 class="display-4">You are not authentificated</h1>
-        <h1>Please, log in or register:</h1>
-        <br>
-        <br>
-        <a href="/">
-            <button type="button" class="btn btn-primary btn-lg btn-block">Click</button>
-        </a>
-    {% endif %}
+
+    <h1 class="display-4">Post your product:</h1>
+    <h5>Name: {{ form.title }}</h5>
+    <br>
+    <h5>Description: {{ form.description }}</h5>
+    <br>
+    <h5>Price: {{ form.price }}$</h5>
+    <br>
+    <h5>Image: {{ form.certificate }}</h5>
+    <br>
+    <input type="submit" value="Submit" class="btn btn-success btn-lg btn-block">
+
 </form>
 
 </body>
